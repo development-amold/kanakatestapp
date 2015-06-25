@@ -28,10 +28,10 @@ class User < ActiveRecord::Base
         puts po_number.first
         puts track_it.count
         po_number.each do |num|
-            Rails.logger.info "======NUM=========#{num}"
+            Rails.logger.info "======NUM=========#{num}======="
         end
         track_it.each do |num|
-            Rails.logger.info "======NUM=========#{num}"
+            Rails.logger.info "======NUM=========#{num}======="
         end
 
     end	
