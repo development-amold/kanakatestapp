@@ -3,10 +3,12 @@
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-6">
             <% flash.each do |name, msg| %>
-                <div class="alert alert-danger alert-dismissable text-center">
-                    <button data-dismiss="alert" class="close" type="button">x</button>
-                    <strong><%= msg %></strong>
-                </div>
+                <% unless msg == "Signed out successfully." %>
+                    <div class="alert alert-danger alert-dismissable text-center">
+                        <button data-dismiss="alert" class="close" type="button">x</button>
+                        <strong><%= msg %></strong>
+                    </div>
+                <% end %>
             <% end %>
         </div>
    </div> 
