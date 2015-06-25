@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    skip
+    skip_before_filter :verify_authenticity_token
     def facebook
         # if request.env["omniauth.auth"].info.email.blank?
         #     redirect_to "/users/auth/facebook?auth_type=rerequest&scope=email"
