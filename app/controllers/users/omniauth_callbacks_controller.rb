@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    
+    skip
     def facebook
         # if request.env["omniauth.auth"].info.email.blank?
         #     redirect_to "/users/auth/facebook?auth_type=rerequest&scope=email"
@@ -10,6 +10,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
                 redirect_to edit_user_registration_path
                 set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
             else
+                Rails.logger.info "----@user-------------------------#{@user.inspect}---"
                 session["devise.facebook_data"] = request.env["omniauth.auth"]  #facebook session
                 redirect_to new_user_registration_path
             end
