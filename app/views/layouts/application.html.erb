@@ -11,6 +11,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
+					<script type="text/javascript">
+						FB.logout(function(response) {
+					        FB.Auth.setAuthResponse(null, 'unknown');
+					        setTimeout('document.location.reload()',0);
+					    });					
+					</script>
+					<a href="/" onclick="FB.logout();">Logout</a>
 					<% if user_signed_in? %>
 						<% unless params[:controller] == "devise/registrations" && (params[:action] == "edit" || params[:action] == "update") %>
 							Signed in as <%= link_to current_user.name, edit_user_registration_path %> <br/>
