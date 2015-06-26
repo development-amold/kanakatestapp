@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<% if user_signed_in? %>
-						<% unless params[:controller] == "devise/registrations" && params[:action] == "edit" %>
+						<% unless params[:controller] == "devise/registrations" && (params[:action] == "edit" || params[:action] == "update") %>
 							Signed in as <%= link_to current_user.name, edit_user_registration_path %> <br/>
 						<% else %>
 							Signed in as <%= current_user.name %>
