@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
 	  redirect_to '/404'
 	end	
 
+	def facebook_logout
+		redirect_to "https://www.facebook.com/logout.php?next=#{destroy_user_session_url}&access_token=#{session[:fb_token]}"  #---logout from facebook
+	end	
+
  protected 
 
 	def configure_permitted_parameters
@@ -20,11 +24,4 @@ class ApplicationController < ActionController::Base
 	def after_sign_in_path_for(resource)
 	 	edit_user_registration_path
 	end
-
-	# def after_sign_in_path_for(resource)
-	#  	edit_user_registration_path
-	# end
-
-# https://www.facebook.com/logout.php?next=http://example.com&access_token=xxx
-
 end
