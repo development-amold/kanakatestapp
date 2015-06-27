@@ -14,14 +14,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
   def failure
-    Rails.logger.info "====FAILURE===================#{scope}======================"
     super
   end
 
   protected
 
  def after_omniauth_failure_path_for(scope)
-    Rails.logger.info "====FAILURE===================#{scope}======================"
     super(scope)
   end
 end
