@@ -14,10 +14,7 @@ class HomesController < ApplicationController
     end
 
     def viewhtmlfile
-        send_file("#{Rails.root}/public/testpage.html",filename: "Parsefile.html",:disposition => "inline")       
-        # respond_to do |format|
-        #     format.html
-        # end
+        send_file("#{Rails.root}/public/testpage.html",filename: "Parsefile.html",:disposition => "inline",:type => "text/html") 
     end
 
 end
