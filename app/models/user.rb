@@ -21,19 +21,4 @@ class User < ActiveRecord::Base
     end
   end
 
-    def self.parsehtmlfile
-        page = Nokogiri::HTML(open("#{Rails.root}/public/testpage.html"))
-        po_number = page.css("body").text.scan(/\bPO Number\b\s+:\s+\K\S+/)
-        track_it = page.css("body").text.scan(/\bTrack It\b\s+\:\s+([^\n\r][A-Z]\d+)/)
-        puts po_number.first
-        puts track_it.count
-        po_number.each do |num|
-            Rails.logger.info "======NUM=========#{num}======="
-        end
-        track_it.each do |num|
-            Rails.logger.info "======NUM=========#{num}======="
-        end
-
-    end	
-
 end
