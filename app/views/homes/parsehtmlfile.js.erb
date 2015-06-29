@@ -1,0 +1,10 @@
+if ($("#btnparsefile").text() == "Parse File") 
+{
+	$("#btnparsefile").text("Hide Output");
+	$("#htmloutput").html("<strong>Output Format: [['PO Number','Track It']]</strong><br/><code><%= @output %></code>");
+} 
+else 
+{
+	$("#btnparsefile").text("Parse File");
+	$("#htmloutput").html("");	
+};
