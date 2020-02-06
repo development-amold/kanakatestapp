@@ -42,7 +42,7 @@ gem 'jbuilder', '~> 2.0'
 
 # User authentication
 gem 'devise' 
-gem 'omniauth-facebook', '~> 1.4.0'
+gem 'omniauth-facebook', '~> 6.0.0'
 
 # Files upload
 gem 'carrierwave'
